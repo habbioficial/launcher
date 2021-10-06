@@ -1,0 +1,46 @@
+{
+  "name": "Habbi",
+  "description": "Habbo Hotel Desktop Application",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "author": "Habbi Hotel",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.5.0",
+    "electron-builder": "^22.11.7"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.9",
+    "discord-rich-presence": "0.0.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/habbioficial/launcher.git"
+  },
+  "asar": true,
+  "extraResources": [
+    "./resources/**"
+  ],
+  "build": {
+    "appId": "br.com.habbi",
+    "productName": "Habbi Launcher",
+    "copyright": "Copyright © 2021 Habbi",
+    "win": {
+      "icon": "./src/resources/assets/256x256.png"
+    },
+    "extraResources": [
+      {
+        "from": "./src/resources",
+        "to": "",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  }
+}
